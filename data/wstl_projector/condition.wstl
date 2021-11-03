@@ -1,0 +1,39 @@
+// Take emerge formatted data and transform it to fit the core definition
+
+//# YOB - .=Missing; NA=Not Assessed
+//# ethnicity - C17459=Hispanic or Latino; C41222=Not Hispanic or Latino; C41221=Unknown; .=Missing; NA=Not Assessed        
+//# C16352=Black or African American; C41259=American Indian or Alaska Native; C41260=Asian; C41261=White; C41219=Native Hawaiian or other Pacific Islander;C17998=Unknown;C43234=Not Reported; .=Missing; NA=Not Assessed 
+
+
+
+def Condition(phecode, subject_id) {
+    subject: Build_Reference("Patient", subject_id);
+    verificationStatus: Convert_Terminology(phecode.value, "ConditionPresent");
+    if phecode.value = 1 {
+        verificationStatus.text: "Condition Present";
+    } else {
+        verificationStatus.text: "Condition Absent";
+    }
+
+    category[0].coding[0].system: "http://terminology.hl7.org/CodeSystem/condition-category";
+    category[0].coding[0].code: "encounter-diagnosis";
+    category[0].coding[0].display: "Encounter Diagnosis";
+
+
+    // The Condition itself
+    code: Convert_Terminology(phecode.code, "Phecode");
+    code.text: phecode.text;
+    var snomed: Convert_TerminologyCoding(phecode.code, "SNOMED");
+    if (snomed) {
+        code.coding[]: snomed;
+    }
+    resourceType: "Condition";
+}
+
+def ProcessPhecodes(phecode) {
+    var subject_id: phecode.subject_id;
+    out entry: Condition(phecode.phecode[], subject_id)
+}
+
+
+

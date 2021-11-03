@@ -1,0 +1,20 @@
+// Emerge Groups
+
+
+def Group(study, subjects) {
+    id: study.study_id;
+    identifier[0].value: study.id;
+    identifier[0].system: "https://www.ncbi.nlm.nih.gov/gap/";
+    identifier[1].value: study.accession;
+    identifier[1].system: "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id="
+    type: "person";
+    actual: true;
+    member: Reference_Enrollment(subjects[]);
+    quantity: $ListLen(subjects[*]);
+    resourceType: "Group";
+}
+
+def ProcessGroup(study, demo) {
+    out entry: Group(study, demo[*]);
+}
+

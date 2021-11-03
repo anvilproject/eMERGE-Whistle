@@ -1,0 +1,55 @@
+// Participant
+
+def Reference_Enrollment(subject) {
+    entity: Build_Reference("Patient", subject.subject_id);
+}
+
+// I'm not seeing any reference to consent nor specimen in the data that I have and the
+// data currently in Terra doesn't seem to be live. We'll have these participant inside
+// the full Group object, but we'll go ahead and add ResearchSubjects in case that helps 
+// with certain queries. Once we have real consent information, we can add that in here 
+// as well. 
+def ResearchSubject(study, subject) {
+    id: subject.subject_id;
+    status: "on-study";
+    study: Build_Reference("ResearchStudy", study.study_id);
+    individual: Build_Reference("Patient", subject.subject_id);
+}
+
+// Our Participant is basically a limited Patient record
+def Participant(subject) {
+    id: subject.subject_id;
+    gender: Convert_TerminologyCode(subject.sex, "Gender");
+    extension[0].url : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race";
+    var RaceValueCoding : Convert_TerminologyCoding(subject.race, "Race");
+    if (RaceValueCoding) {
+        extension[0].extension[0].valueCoding : RaceValueCoding;
+        extension[0].extension[0].url : "ombCategory";
+        extension[0].extension[1].url : "text";
+        extension[0].extension[1].valueString : subject.race_display;
+    } else {
+        extension[0].extension[0].valueString : subject.race_display;
+        extension[0].extension[0].url : "text";
+    }
+
+    extension[1].url : "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity";
+    var EthnicityValueCoding : Convert_TerminologyCoding(subject.ethnicity, "Ethnicity");
+    if (EthnicityValueCoding){
+        extension[1].extension[0].valueCoding : EthnicityValueCoding;
+        extension[1].extension[0].url : "ombCategory";
+        extension[1].extension[1].valueString : subject.ethnicity_display;
+        extension[1].extension[1].url : "text";
+    } else {
+        extension[1].extension[0].valueString : subject.ethnicity_display;
+        extension[1].extension[0].url : "text";
+    }
+    resourceType : "Patient"
+}
+
+def ProcessParticipant(demo) {
+    out entry: Participant(demo);
+}
+
+def ProcessResearchSubject(study, demo) {
+    out entry: ResearchSubject(study, demo);
+}

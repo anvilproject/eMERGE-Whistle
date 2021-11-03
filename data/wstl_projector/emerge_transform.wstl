@@ -1,0 +1,14 @@
+// Transform eMERGE data (in JSON format) into FHIR objects suitable
+// for the NCPI FHIR IG
+
+def Transform_Emerge_Dataset(resource) {
+    if resource.demo? {
+        $this: ProcessGroup(resource.study, resource.demo[*]);
+        if resource.study? {
+            $this: ProcessStudy(resource.study);
+            $this: ProcessResearchSubject(resource.study, resource.demo[]);
+        }
+        $this: ProcessParticipant(resource.demo[]);
+    }        
+    $this (if resource.phecode?): ProcessPhecodes(resource.phecode[])
+}

@@ -1,0 +1,704 @@
+{
+  "id": "emerge-fhir_concepts",
+  "resourceType": "ConceptMap",
+  "version": "v1",
+  "group": [
+    {
+      "source": "Gender",
+      "target": "http://hl7.org/fhir/ValueSet/administrative-gender",
+      "element": [
+        {
+          "code": "C46109",
+          "display": "Male",
+          "target": [
+            {
+              "code": "male",
+              "display": "Male",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "C46110",
+          "display": "Female",
+          "target": [
+            {
+              "code": "female",
+              "display": "Female",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "U",
+          "display": "Unknown",
+          "target": [
+            {
+              "code": "unknown",
+              "display": "Unknown",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "NA",
+          "display": "Not Assessed",
+          "target": [
+            {
+              "code": "unknown",
+              "display": "Not Assessed",
+              "equivalence": "equivalent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": "Ethnicity",
+      "target": "urn:oid:2.16.840.1.113883.6.238",
+      "element": [
+        {
+          "code": "C41222",
+          "display": "Hispanic or Latino",
+          "target": [
+            {
+              "code": "2135-2",
+              "display": "Hispanic or Latino",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "C17459",
+          "display": "Not Hispanic or Latino",
+          "target": [
+            {
+              "code": "2186-5",
+              "display": "Not Hispanic or Latino",
+              "equivalence": "equivalent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": "Ethnicity",
+      "target": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+      "element": [
+        {
+          "code": "C41221",
+          "display": "Unknown",
+          "target": [
+            {
+              "code": "UNK",
+              "display": "Unknown",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "NA",
+          "display": "Not Assessed",
+          "target": [
+            {
+              "code": "UNK",
+              "display": "Not Assessed",
+              "equivalence": "equivalent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": "Race",
+      "target": "urn:oid:2.16.840.1.113883.6.238",
+      "element": [
+        {
+          "code": "C41259",
+          "display": "American Indian or Alaska Native",
+          "target": [
+            {
+              "code": "1002-5",
+              "display": "American Indian or Alaska Native",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "C41260",
+          "display": "Asian",
+          "target": [
+            {
+              "code": "2028-9",
+              "display": "Asian",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "C16352",
+          "display": "Black or African American",
+          "target": [
+            {
+              "code": "2054-5",
+              "display": "Black or African American",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "C41219",
+          "display": "Native Hawaiian or other Pacific Islander",
+          "target": [
+            {
+              "code": "2076-8",
+              "display": "Native Hawaiian or other Pacific Islander",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "C41261",
+          "display": "White",
+          "target": [
+            {
+              "code": "2106-3",
+              "display": "White",
+              "equivalence": "equivalent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": "Race",
+      "target": "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
+      "element": [
+        {
+          "code": "C17998",
+          "display": "Unknown",
+          "target": [
+            {
+              "code": "UNK",
+              "display": "Unknown",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "NA",
+          "display": "Not Assessed",
+          "target": [
+            {
+              "code": "UNK",
+              "display": "Not Assessed",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "C43234",
+          "display": "Not Reported",
+          "target": [
+            {
+              "code": "UNK",
+              "display": "Not Reported",
+              "equivalence": "equivalent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": "Phecode",
+      "target": "https://www.phewascatalog.org/phecodes",
+      "element": [
+        {
+          "code": "phe_4011",
+          "display": "Essential Hypertension",
+          "target": [
+            {
+              "code": "401.1",
+              "display": "Essential Hypertension",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_2502",
+          "display": "Type 2 diabetes",
+          "target": [
+            {
+              "code": "250.2",
+              "display": "Type 2 diabetes",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_2721",
+          "display": "Hyperlipidemia",
+          "target": [
+            {
+              "code": "272.1",
+              "display": "Hyperlipidemia",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_4114",
+          "display": "Coronary atherosclerosis",
+          "target": [
+            {
+              "code": "411.4",
+              "display": "Coronary atherosclerosis",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_495",
+          "display": "Asthma",
+          "target": [
+            {
+              "code": "495",
+              "display": "Asthma",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_27811",
+          "display": "Morbid obesity",
+          "target": [
+            {
+              "code": "278.11",
+              "display": "Morbid obesity",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_42721",
+          "display": "Atrial fibrillation",
+          "target": [
+            {
+              "code": "427.21",
+              "display": "Atrial fibrillation",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_53011",
+          "display": "GERD",
+          "target": [
+            {
+              "code": "530.11",
+              "display": "GERD",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_29622",
+          "display": "Major depressive disorder",
+          "target": [
+            {
+              "code": "296.22",
+              "display": "Major depressive disorder",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_3131",
+          "display": "Attention deficit hyperactivity disorder",
+          "target": [
+            {
+              "code": "313.1",
+              "display": "Attention deficit hyperactivity disorder",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_2444",
+          "display": "Hypothyroidism NOS",
+          "target": [
+            {
+              "code": "244.4",
+              "display": "Hypothyroidism NOS",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_476",
+          "display": "Allergic rhinitis",
+          "target": [
+            {
+              "code": "476",
+              "display": "Allergic rhinitis",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_27211",
+          "display": "Hypercholesterolemia",
+          "target": [
+            {
+              "code": "272.11",
+              "display": "Hypercholesterolemia",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_2781",
+          "display": "Obesity",
+          "target": [
+            {
+              "code": "278.1",
+              "display": "Obesity",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_17411",
+          "display": "Malignant neoplasm of female breast",
+          "target": [
+            {
+              "code": "174.11",
+              "display": "Malignant neoplasm of female breast",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_2962",
+          "display": "Depression",
+          "target": [
+            {
+              "code": "296.2",
+              "display": "Depression",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_306",
+          "display": "Other mental disorder",
+          "target": [
+            {
+              "code": "306",
+              "display": "Other mental disorder",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_32732",
+          "display": "Obstructive sleep apnea",
+          "target": [
+            {
+              "code": "327.32",
+              "display": "Obstructive sleep apnea",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_27213",
+          "display": "Mixed hyperlipidemia",
+          "target": [
+            {
+              "code": "272.13",
+              "display": "Mixed hyperlipidemia",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_3133",
+          "display": "Autism",
+          "target": [
+            {
+              "code": "313.3",
+              "display": "Autism",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_587",
+          "display": "Kidney Replaced by Transplant",
+          "target": [
+            {
+              "code": "587",
+              "display": "Kidney Replaced by Transplant",
+              "equivalence": "equivalent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": "SNOMED",
+      "target": "http://snomed.info/sct",
+      "element": [
+        {
+          "code": "phe_4011",
+          "display": "Essential Hypertension",
+          "target": [
+            {
+              "code": "59621000",
+              "display": "Essential Hypertension",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_2502",
+          "display": "Type 2 diabetes",
+          "target": [
+            {
+              "code": "44054006",
+              "display": "Type 2 diabetes",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_2721",
+          "display": "Hyperlipidemia",
+          "target": [
+            {
+              "code": "55822004",
+              "display": "Hyperlipidemia",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_4114",
+          "display": "Coronary atherosclerosis",
+          "target": [
+            {
+              "code": "443502000",
+              "display": "Coronary atherosclerosis",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_495",
+          "display": "Asthma",
+          "target": [
+            {
+              "code": "195967001",
+              "display": "Asthma",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_27811",
+          "display": "Morbid obesity",
+          "target": [
+            {
+              "code": "238136002",
+              "display": "Morbid obesity",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_42721",
+          "display": "Atrial fibrillation",
+          "target": [
+            {
+              "code": "49436004",
+              "display": "Atrial fibrillation",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_53011",
+          "display": "GERD",
+          "target": [
+            {
+              "code": "235595009",
+              "display": "GERD",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_29622",
+          "display": "Major depressive disorder",
+          "target": [
+            {
+              "code": "370143000",
+              "display": "Major depressive disorder",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_3131",
+          "display": "Attention deficit hyperactivity disorder",
+          "target": [
+            {
+              "code": "406506008",
+              "display": "Attention deficit hyperactivity disorder",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_2444",
+          "display": "Hypothyroidism NOS",
+          "target": [
+            {
+              "code": "40930008",
+              "display": "Hypothyroidism NOS",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_476",
+          "display": "Allergic rhinitis",
+          "target": [
+            {
+              "code": "61582004",
+              "display": "Allergic rhinitis",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_27211",
+          "display": "Hypercholesterolemia",
+          "target": [
+            {
+              "code": "13644009",
+              "display": "Hypercholesterolemia",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_2781",
+          "display": "Obesity",
+          "target": [
+            {
+              "code": "238136002",
+              "display": "Obesity",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_17411",
+          "display": "Malignant neoplasm of female breast",
+          "target": [
+            {
+              "code": "372064008",
+              "display": "Malignant neoplasm of female breast",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_2962",
+          "display": "Depression",
+          "target": [
+            {
+              "code": "35489007",
+              "display": "Depression",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_32732",
+          "display": "Obstructive sleep apnea",
+          "target": [
+            {
+              "code": "78275009",
+              "display": "Obstructive sleep apnea",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_27213",
+          "display": "Mixed hyperlipidemia",
+          "target": [
+            {
+              "code": "267434003",
+              "display": "Mixed hyperlipidemia",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_3133",
+          "display": "Autism",
+          "target": [
+            {
+              "code": "35919005",
+              "display": "Autism",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "phe_587",
+          "display": "Kidney Replaced by Transplant",
+          "target": [
+            {
+              "code": "70536003",
+              "display": "Kidney Replaced by Transplant",
+              "equivalence": "equivalent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": "ConditionPresent",
+      "target": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+      "element": [
+        {
+          "code": "0",
+          "display": "Condition Absent",
+          "target": [
+            {
+              "code": "refuted",
+              "display": "Condition Absent",
+              "equivalence": "equivalent"
+            }
+          ]
+        },
+        {
+          "code": "1",
+          "display": "Condition Present",
+          "target": [
+            {
+              "code": "confirmed",
+              "display": "Condition Present",
+              "equivalence": "equivalent"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+// eMERGE Studies
+
+def Study(study) {
+    id: study.id;
+    title: study.title;
+    description: study.desc;
+    status: "completed"
+    enrollment: Build_Reference("Group", study.id);
+    identifier[0].value: study.id;
+    identifier[0].system: "https://www.ncbi.nlm.nih.gov/gap/";
+    identifier[1].value: study.accession;
+    identifier[1].system: "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=";
+    resourceType: "ResearchStudy";
+}
+
+def ProcessStudy(study) {
+    out entry: Study(study);
+}

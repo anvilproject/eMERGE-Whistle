@@ -1,0 +1,47 @@
+// Description: Converts local terminology into FHIR R4 terminology
+//
+// Argument(s):
+//   code:  localized code value
+//   system: System of the source code specified in the concept map 
+//           These are localized 'systems' which help aggregate
+//           the various codes that belong together
+//
+// Output(s):
+//   FHIR CodeableConcept datatype: https://www.hl7.org/fhir/datatypes.html#CodeableConcept
+//
+def Convert_Terminology(code, system){
+  var mapping : $HarmonizeCode("$Local", code, system, "emerge-fhir_concepts");
+  coding : mapping;
+}
+
+// Description: Converts local terminology into FHIR R4 terminology
+//
+// Argument(s):
+//   code:  localized code value
+//   system: System of the source code specified in the concept map 
+//           These are localized 'systems' which help aggregate
+//           the various codes that belong together
+//
+// Output(s):
+//   FHIR Coding datatype: https://www.hl7.org/fhir/datatypes.html#Coding
+//
+def Convert_TerminologyCoding(code, system){
+  var mapping : $HarmonizeCode("$Local", code, system, "emerge-fhir_concepts");
+  $this : mapping[0];
+}
+
+// Description: Converts local terminology into FHIR R4 terminology
+//
+// Argument(s):
+//   code:  localized code value
+//   system: System of the source code specified in the concept map 
+//           These are localized 'systems' which help aggregate
+//           the various codes that belong together
+//
+// Output(s):
+//   FHIR Code datatype: https://www.hl7.org/fhir/datatypes.html#code
+//
+def Convert_TerminologyCode(code, system){
+  var mapping : $HarmonizeCode("$Local", code, system, "emerge-fhir_concepts");
+  $this : mapping[0].code;
+}

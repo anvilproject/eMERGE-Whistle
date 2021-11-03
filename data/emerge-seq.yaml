@@ -1,0 +1,24 @@
+study_id: phs001616
+study_accession: phs001616.v2.p2
+study_title: eMERGE Network Phase III Clinical Sequencing-eMERGEseq Panel 
+study_desc: The Electronic Medical Records and Genomics (eMERGE) Network is a National Institutes of Health (NIH)-organized and funded consortium of U.S. medical research institutions. The primary goal of the eMERGE Network is to develop, disseminate, and apply approaches to research that combine biorepositories with electronic medical record (EMR) systems for genomic discovery and genomic medicine implementation research. eMERGE was announced in September 2007 and began its third phase in September 2015.
+output_filename: phs001616
+id_colname: subject_id
+whistle_src: emerge.wstl
+code_harmonization_dir: data/harmony
+projector_lib: data/wstl_projector
+dataset:
+  demo: 
+    filename: data/dbgap/emergeseq/phs001616_demo.csv
+    data_dictionary: data/dbgap/emergeseq/dd/demo.csv
+    code_harmonization: data/harmony/emerge-fhir_concepts.csv
+  phecode: 
+    filename: data/dbgap/emergeseq/phs001616_top20_phecodes.csv
+    data_dictionary: data/dbgap/emergeseq/dd/phecodes.csv
+    code_harmonization: data/harmony/emerge-fhir_concepts.csv
+    aggregators:    
+      phecode: ^phe_*
+  bmi: 
+    filename: data/dbgap/emergeseq/phs001616_bmi.csv
+    data_dictionary: data/dbgap/emergeseq/dd/bmi.csv
+    code_harmonization: data/harmony/emerge-fhir_concepts.csv

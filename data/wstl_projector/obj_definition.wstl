@@ -1,0 +1,34 @@
+// ObservationDefinition is used to describe individual dataset variables 
+// for use in dataset summarization
+
+def CodeSystemContent(value) {
+    code: value.code;
+    display: value.description;
+}
+
+def DatasetVariableCodeSystems(study_id, dataset_name, variable) {
+    id: $StrCat(study_id, "/", dataset_name, "/", variable.varname);
+    url: $StrCat("https://nih-ncpi.github.io/ncpi-fhir-ig/data-dictionary/", study_id, "/", dataset_name, "/", variable.varname);
+    identifier[0].system: "https://nih-ncpi.github.io/ncpi-fhir-ig/study/variable/code-system";
+    identifier[0].value: $StrCat(study_id,dataset_name, variable.varname);
+    status: "active";
+    experimental: false;
+    content: "complete";
+    count: $ListLen(variable.values[*]);
+    concept: CodeSystemContent(variable.values);
+    resourceType: 'CodeSystem';
+}
+
+def DatasetVariableValueSet(study_id, dataset_name, variable) {
+    id: $StrCat(study_id, "/", dataset_name, "/", variable.varname);
+    url: $StrCat("https://nih-ncpi.github.io/ncpi-fhir-ig/data-dictionary/", study_id, "/", dataset_name, "/", variable.varname, "-VS");
+    identifier[0].system: "https://nih-ncpi.github.io/ncpi-fhir-ig/study/variable/value-set";
+    identifier[0].value: $StrCat(study_id,dataset_name, variable.varname);
+    status: "active";
+    compose.include[0].system: $StrCat("https://nih-ncpi.github.io/ncpi-fhir-ig/data-dictionary/", study_id, "/", dataset_name, "/", variable.varname);
+    resourceType: 'ValueSet';
+}
+
+def DatasetCodedVariable() {
+    
+}
